@@ -8,7 +8,7 @@ Este guia vai te ajudar a configurar e executar um DAG no Airflow que faz três 
 
 ## Arquivo: `airflow_dag_with_great_expectations_and_datahub.py`
 
-Este arquivo define um fluxo de trabalho (DAG) no Airflow com as seguintes etapas:
+Este arquivo define um fluxo de trabalho no Airflow com as seguintes etapas/tasks:
 
 1. **Execução do PySpark**: Primeiro, ele roda um script PySpark que você pode ajustar para seu próprio processamento de dados.
 2. **Verificação de Qualidade com Great Expectations**: Depois, ele verifica se os dados estão corretos (por exemplo, se uma coluna específica existe ou se valores nulos estão onde não deveriam estar).
@@ -18,7 +18,8 @@ Este arquivo define um fluxo de trabalho (DAG) no Airflow com as seguintes etapa
 
 - **SparkSubmitOperator**: Este operador do Airflow envia o trabalho PySpark para ser executado.
 - **PythonOperator**: Roda o código que faz a verificação de qualidade dos dados usando o **Great Expectations**.
-- **DatahubEmitterOperator**: Este operador é responsável por enviar os metadados do seu pipeline para o DataHub.
+- **DatahubEmitterOperator**: Este operador é responsável por enviar os metadados do seu pipeline para o DataHub. Link: https://registry.astronomer.io/providers/datahub/versions/latest/modules/datahubemitteroperator
+
 
 ### Como configurar o DataHub no Airflow:
 
@@ -26,13 +27,13 @@ Este arquivo define um fluxo de trabalho (DAG) no Airflow com as seguintes etapa
 2. Adicione uma nova conexão:
    - **Conn Id**: `datahub_rest_default`
    - **Conn Type**: `HTTP`
-   - **Host**: A URL do seu servidor DataHub.
+   - **Host**: URL do DataHub.
    - **Extra**: `{"authorization": "Bearer <seu_token_de_autorizacao>"}`.
 
 ### Como usar este arquivo:
 
-1. **Coloque o DAG no Airflow**: Copie o arquivo `airflow_dag_with_great_expectations_and_datahub.py` para a pasta onde ficam seus DAGs (geralmente algo como `~/airflow/dags/`).
-   
+1. **Coloque a DAG no Airflow**: Fizemos o upload do arquivo `ingestion.py` para a pasta onde ficam as DAGs (geralmente algo como `~/airflow/dags/`).
+
 2. **Atualize o caminho do script PySpark**: No campo `application`, altere o caminho para o local onde está o seu script PySpark.
 
 3. **Instale as dependências**:
