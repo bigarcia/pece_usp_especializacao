@@ -36,12 +36,18 @@ Este guia vai te ajudar a configurar e executar um DAG no Airflow que faz três 
 
    `airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com`
 
-6. Inicie o scheduler (agenda e executa as tarefas)
+
+6. Instalação de bibliotecas
+    `pip install apache-airflow-providers-apache-spark`
+![image](https://github.com/user-attachments/assets/6762f48d-37db-4150-afca-16ff3562e027)
+
+
+7. Inicie o scheduler (agenda e executa as tarefas)
 
    `airflow scheduler`
    ![image](https://github.com/user-attachments/assets/48d7421a-98f9-4160-bb73-ede3188404e0)
 
-7. Em outro terminal, iniciamos o Webserver (oferece a interface gráfica)
+8. Em outro terminal, iniciamos o Webserver (oferece a interface gráfica)
 
    `airflow webserver --port 8080`
    ![image](https://github.com/user-attachments/assets/3f2f4b7c-265e-4a8b-aae6-89765b6b9715)
@@ -59,9 +65,6 @@ Este guia vai te ajudar a configurar e executar um DAG no Airflow que faz três 
 
 10. Criação da pasta airflow/dags e inserção do arquivo python que cria a DAG nesse pasta
     `~airflow/dags`
-12. Instalação de bibliotecas
-    `pip install apache-airflow-providers-apache-spark`
-![image](https://github.com/user-attachments/assets/6762f48d-37db-4150-afca-16ff3562e027)
 
 
 ## Arquivo: `airflow_dag_with_great_expectations_and_datahub.py`
