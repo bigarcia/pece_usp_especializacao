@@ -1,11 +1,16 @@
 
 ## Configuração de ambiente
-### Configurar Airflow
+
+### Criar um ambiente virtual para instalar todas as libs
+
 1. Criação de um ambiente virtual:
    `python3 -m venv venv`
 2. Inicialização do ambiente virtual
    `source ./venv/bin/activate`
 ![image](https://github.com/user-attachments/assets/2bf6032d-5190-4d7d-8681-480631361743)
+
+### Configurar Airflow
+
 
 3. Instalação do Apache Airflow:
  
@@ -89,8 +94,12 @@ MySQL – banco de dados onde os metadados são armazenados.
 ### Configurar Great Expectations
 1. Instalar
 `pip install great_expectations`
+`pip show great_expectations`
 ![image](https://github.com/user-attachments/assets/eb963fa7-95de-4c20-85f2-657c4ddc7c48)
 ![image](https://github.com/user-attachments/assets/3d0bbfd8-b7e3-4c1a-8a06-8063a6b5f0d2)
+
+Instalado em: /Users/bianca.martins/venv/lib/python3.9/site-packages
+
 Error:
 ![image](https://github.com/user-attachments/assets/02bc4f15-6693-4898-b5f5-5f91d001596b)
 ![image](https://github.com/user-attachments/assets/13f95a2f-268a-4a9a-8c7a-def16a47129e)
