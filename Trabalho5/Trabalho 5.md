@@ -7,6 +7,7 @@ Este guia vai te ajudar a configurar e executar um DAG no Airflow que faz três 
 3. Envia informações sobre o seu pipeline de dados para o **DataHub**.
 
 ## Configuração de ambiente
+### Configurar Airflow
 1. Criação de um ambiente virtual:
    `python3 -m venv venv`
 2. Inicialização do ambiente virtual
@@ -49,11 +50,18 @@ Este guia vai te ajudar a configurar e executar um DAG no Airflow que faz três 
 9. Acesse a interface do Airflow utilizando o usuário criado:
    
    `http://localhost:8793/`
-   `username: admin`
-   `password: admin`
+
+   
+   `username: admin, password: admin`
    
    ![image](https://github.com/user-attachments/assets/6866f269-e560-46b4-8bc2-e04983bbd148)
    ![image](https://github.com/user-attachments/assets/9626725c-17a9-4419-ab49-70f625a08892)
+
+10. Criação da pasta airflow/dags e inserção do arquivo python que cria a DAG nesse pasta
+    `~airflow/dags`
+12. Instalação de bibliotecas
+    `pip install apache-airflow-providers-apache-spark`
+![image](https://github.com/user-attachments/assets/6762f48d-37db-4150-afca-16ff3562e027)
 
 
 ## Arquivo: `airflow_dag_with_great_expectations_and_datahub.py`
