@@ -46,9 +46,16 @@ Este guia vai te ajudar a configurar e executar um DAG no Airflow que faz três 
    ![image](https://github.com/user-attachments/assets/3f2f4b7c-265e-4a8b-aae6-89765b6b9715)
 
 
-9. Acesse a interface do Airflow:
+9. Acesse a interface do Airflow utilizando o usuário criado:
    
    `http://localhost:8793/`
+   `username: admin`
+   `password: admin`
+   
+   ![image](https://github.com/user-attachments/assets/6866f269-e560-46b4-8bc2-e04983bbd148)
+   ![image](https://github.com/user-attachments/assets/d6923208-e39a-41c9-b449-c599eb0c9c21)
+
+
 ## Arquivo: `airflow_dag_with_great_expectations_and_datahub.py`
 
 Este arquivo define um fluxo de trabalho no Airflow com as seguintes etapas/tasks:
