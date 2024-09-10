@@ -61,12 +61,17 @@ Problemas na instalação:
 ### Configurar DataHub
 1. Clonando repositório
 `git clone https://github.com/datahub-project/datahub.git`
+
 `cd datahub/docker/quickstart`
 
 2.Instalar docker desktop
+https://www.docker.com/products/docker-desktop/
+Abrir o docker desktop 
+
 3. Iniciar container do DataHub com Docker compose:
 
    `docker-compose -f docker-compose.quickstart.yml up`
+
 
 Esse comando vai iniciar todos os serviços do DataHub, incluindo:
 
@@ -75,6 +80,8 @@ Frontend – interface web do DataHub.
 Elasticsearch – mecanismo de busca para os metadados.
 Kafka – pipeline de eventos para metadados.
 MySQL – banco de dados onde os metadados são armazenados.
+
+![image](https://github.com/user-attachments/assets/b854f798-cd6d-4438-9bc3-ed420e31261d)
 
 3. Acessar interface Datahub, utilizando o usuário datahub e senha datahub
    `http://localhost:9002`
