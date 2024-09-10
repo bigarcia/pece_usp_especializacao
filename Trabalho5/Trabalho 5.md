@@ -6,6 +6,29 @@ Este guia vai te ajudar a configurar e executar um DAG no Airflow que faz três 
 2. Verifica a qualidade dos dados usando **Great Expectations**.
 3. Envia informações sobre o seu pipeline de dados para o **DataHub**.
 
+## Configuração de ambiente
+1. Cria um ambiente virtual:
+   1.1 `python3 -m venv venv`
+   1.2 `source ./venv/bin/activate`
+![image](https://github.com/user-attachments/assets/2bf6032d-5190-4d7d-8681-480631361743)
+
+2. Instalação do Apache Airflow:
+ 
+   2.1.`export AIRFLOW_VERSION=2.7.1`
+   
+   2.2.`export PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"`
+   
+   2.3. `export CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"`
+   
+   2.4. `pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"`
+
+![image](https://github.com/user-attachments/assets/e5b66054-905b-41f4-a453-7bc571a51907)
+
+3. Inicializar o banco `airflow db init`
+
+![image](https://github.com/user-attachments/assets/21f4c9d1-49f0-495e-9e85-713c54f2c515)
+
+
 ## Arquivo: `airflow_dag_with_great_expectations_and_datahub.py`
 
 Este arquivo define um fluxo de trabalho no Airflow com as seguintes etapas/tasks:
