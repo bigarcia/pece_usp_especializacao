@@ -41,6 +41,8 @@ Este guia vai te ajudar a configurar e executar um DAG no Airflow que faz três 
     `pip install apache-airflow-providers-apache-spark`
 ![image](https://github.com/user-attachments/assets/6762f48d-37db-4150-afca-16ff3562e027)
 
+Problemas na instalação:
+![image](https://github.com/user-attachments/assets/3dec56ae-ad08-40be-a1d6-0474cc124997)
 
 7. Inicie o scheduler (agenda e executa as tarefas)
 
