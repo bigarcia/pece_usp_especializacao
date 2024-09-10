@@ -1,11 +1,4 @@
 
-# Como executar um DAG do Airflow com PySpark, validação de dados com Great Expectations e integração com DataHub
-
-Este guia vai te ajudar a configurar e executar um DAG no Airflow que faz três coisas importantes:
-1. Roda um script PySpark.
-2. Verifica a qualidade dos dados usando **Great Expectations**.
-3. Envia informações sobre o seu pipeline de dados para o **DataHub**.
-
 ## Configuração de ambiente
 ### Configurar Airflow
 1. Criação de um ambiente virtual:
