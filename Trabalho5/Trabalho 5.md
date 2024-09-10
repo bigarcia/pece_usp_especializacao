@@ -53,7 +53,7 @@ Este guia vai te ajudar a configurar e executar um DAG no Airflow que faz três 
    `password: admin`
    
    ![image](https://github.com/user-attachments/assets/6866f269-e560-46b4-8bc2-e04983bbd148)
-   ![image](https://github.com/user-attachments/assets/d6923208-e39a-41c9-b449-c599eb0c9c21)
+   ![image](https://github.com/user-attachments/assets/9626725c-17a9-4419-ab49-70f625a08892)
 
 
 ## Arquivo: `airflow_dag_with_great_expectations_and_datahub.py`
