@@ -8,41 +8,45 @@ Este guia vai te ajudar a configurar e executar um DAG no Airflow que faz três 
 
 ## Configuração de ambiente
 1. Criação de um ambiente virtual:
-   1.1 `python3 -m venv venv`
-   1.2 `source ./venv/bin/activate`
+   `python3 -m venv venv`
+2. Inicialização do ambiente virtual
+   `source ./venv/bin/activate`
 ![image](https://github.com/user-attachments/assets/2bf6032d-5190-4d7d-8681-480631361743)
 
-2. Instalação do Apache Airflow:
+3. Instalação do Apache Airflow:
  
-   2.1.`export AIRFLOW_VERSION=2.7.1`
+   3.1.`export AIRFLOW_VERSION=2.7.1`
    
-   2.2.`export PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"`
+   3.2.`export PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"`
    
-   2.3. `export CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"`
+   3.3. `export CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"`
    
-   2.4. `pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"`
+   3.4. `pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"`
 
 ![image](https://github.com/user-attachments/assets/e5b66054-905b-41f4-a453-7bc571a51907)
 
-3. Inicialização do banco
+4. Inicialização do banco
 
    `airflow db init`
 
 ![image](https://github.com/user-attachments/assets/21f4c9d1-49f0-495e-9e85-713c54f2c515)
 
-4. Criação de um usuário admin
+5. Criação de um usuário admin
 
    `airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com`
 
-5. Inicie o scheduler (agenda e executa as tarefas)
+6. Inicie o scheduler (agenda e executa as tarefas)
 
    `airflow scheduler`
-   
-7. Iniciar o Webserver (oferece a interface gráfica)
+   ![image](https://github.com/user-attachments/assets/48d7421a-98f9-4160-bb73-ede3188404e0)
+
+7. Em outro terminal, iniciamos o Webserver (oferece a interface gráfica)
 
    `airflow webserver --port 8080`
+   ![image](https://github.com/user-attachments/assets/3f2f4b7c-265e-4a8b-aae6-89765b6b9715)
 
-8. Acesse a interface do Airflow:
+
+9. Acesse a interface do Airflow:
    
    `http://localhost:8793/`
 ## Arquivo: `airflow_dag_with_great_expectations_and_datahub.py`
