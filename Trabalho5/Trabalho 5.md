@@ -68,9 +68,10 @@ Problemas na instalação:
 ### Configurar DataHub
 1. Clonando repositório
 `git clone https://github.com/datahub-project/datahub.git`
-`cd datahub`
+`cd datahub/docker/quickstart`
 
-2. Iniciar container do DataHub com Docker compose:
+2.Instalar docker desktop
+3. Iniciar container do DataHub com Docker compose:
 
    `docker-compose -f docker-compose.quickstart.yml up`
 
