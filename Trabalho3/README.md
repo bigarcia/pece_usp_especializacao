@@ -17,7 +17,7 @@ Transformações aplicadas na camada trusted:
 Arquivos de input
 ![image](https://github.com/user-attachments/assets/e0bc3181-c626-4aa1-ad82-a0cc14f7bf6c)
 
-Arquivos gerados na camada raw 
+Arquivos gerados na camada raw
 
 ![image](https://github.com/user-attachments/assets/db636f67-fcce-4d08-a6e7-9719a6195bc8)
 
@@ -28,5 +28,3 @@ Arquivos gerados na camada trusted
 Arquivos gerados na camada delivery
 
 ![image](https://github.com/user-attachments/assets/960ebb9f-78eb-4dc9-906a-092ee256fd35)
-
-
