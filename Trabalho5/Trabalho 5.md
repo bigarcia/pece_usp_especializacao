@@ -55,19 +55,47 @@ Problemas na instalação:
    ![image](https://github.com/user-attachments/assets/3f2f4b7c-265e-4a8b-aae6-89765b6b9715)
 
 
-9. Acesse a interface do Airflow utilizando o usuário criado:
+9. Acesse a interface do Airflow utilizando o usuário admin e senha admin
    
    `http://localhost:8793/`
-
-   
-   `username: admin, password: admin`
    
    ![image](https://github.com/user-attachments/assets/6866f269-e560-46b4-8bc2-e04983bbd148)
    ![image](https://github.com/user-attachments/assets/9626725c-17a9-4419-ab49-70f625a08892)
 
 10. Criação da pasta airflow/dags e inserção do arquivo python que cria a DAG nesse pasta
     `~airflow/dags`
+    
+### Configurar DataHub
+1. Clonando repositório
+`git clone https://github.com/datahub-project/datahub.git`
+`cd datahub`
 
+2. Iniciar container do DataHub com Docker compose:
+
+   `docker-compose -f docker-compose.quickstart.yml up`
+
+Esse comando vai iniciar todos os serviços do DataHub, incluindo:
+
+GMS (Graph Metadata Service) – backend do DataHub.
+Frontend – interface web do DataHub.
+Elasticsearch – mecanismo de busca para os metadados.
+Kafka – pipeline de eventos para metadados.
+MySQL – banco de dados onde os metadados são armazenados.
+
+3. Acessar interface Datahub, utilizando o usuário datahub e senha datahub
+   `http://localhost:9002`
+
+### Configurar Great Expectations
+1. Instalar
+`pip install great_expectations`
+![image](https://github.com/user-attachments/assets/eb963fa7-95de-4c20-85f2-657c4ddc7c48)
+![image](https://github.com/user-attachments/assets/3d0bbfd8-b7e3-4c1a-8a06-8063a6b5f0d2)
+Error:
+![image](https://github.com/user-attachments/assets/02bc4f15-6693-4898-b5f5-5f91d001596b)
+![image](https://github.com/user-attachments/assets/13f95a2f-268a-4a9a-8c7a-def16a47129e)
+
+3. Inicializar
+`great_expectations init`
 
 ## Arquivo: `airflow_dag_with_great_expectations_and_datahub.py`
 
