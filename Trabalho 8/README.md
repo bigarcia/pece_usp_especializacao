@@ -1,5 +1,5 @@
 
-## Trabalho 7
+# Trabalho 8 - Pipeline Streaming com PySpark e Kafka
 
 
 1. Criação do arquivo docker-compose.yml
@@ -13,7 +13,3 @@
 6. Instalar pyspark
   `pip install pyspark`
 7. Criação de Job PySpark (consumer.py), que consome os dados do Kafka, consulta o banco de dados SQL para enriquecer as reclamações, e salva os resultados em um arquivo local
-
-
-
-
