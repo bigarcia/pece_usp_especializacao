@@ -1,35 +1,68 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import from_json, col
+from pyspark.sql.functions import from_json, col, split
 from pyspark.sql.types import StructType, StringType
+import mysql.connector
 
-# Defina o esquema dos dados
-schema = StructType().add("id", StringType()).add("data", StringType())
-
+# Criar a sessão Spark
 spark = SparkSession.builder \
-    .appName("Kafka-PySpark-Structured-Streaming") \
+    .appName("Kafka-PySpark-CSV-To-MySQL") \
     .getOrCreate()
 
-# Ler dados do Kafka
+# Esquema genérico para os dados CSV lidos do Kafka
+schema = StructType().add("id", StringType()).add("name", StringType()).add("value", StringType())
+
+# Ler os dados do Kafka
 kafka_stream = spark \
     .readStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "localhost:9092") \
-    .option("subscribe", "data_topic") \
+    .option("subscribe", "csv_data_topic") \
     .load()
 
-# Convertendo os dados para o esquema desejado
+# Transformar a string CSV de volta em colunas
 data_stream = kafka_stream.selectExpr("CAST(value AS STRING)") \
-    .select(from_json(col("value"), schema).alias("data")) \
-    .select("data.*")
+    .withColumn("data", split(col("value"), ",")) \
+    .select(
+        col("data")[0].alias("id"),
+        col("data")[1].alias("name"),
+        col("data")[2].alias("value")
+    )
 
-# Conectar ao banco de dados SQL para enriquecimento
+# Função para enriquecer os dados consultando o MySQL
 def enrich_data(df):
-    enriched_df = df.withColumn("enriched_field", df["data"] + "_enriched")
+    # Conectar ao MySQL
+    connection = mysql.connector.connect(
+        host='localhost',
+        database='mydb',
+        user='myuser',
+        password='mypassword'
+    )
+
+    cursor = connection.cursor(dictionary=True)
+
+    # Suponha que a tabela de enriquecimento tem um mapeamento de id -> enriched_value
+    query = "SELECT id, enriched_value FROM enrichment_table WHERE id = %s"
+
+    def enrich_row(row):
+        cursor.execute(query, (row['id'],))
+        result = cursor.fetchone()
+        if result:
+            return row['id'], row['name'], row['value'], result['enriched_value']
+        return row['id'], row['name'], row['value'], None
+
+    # Aplicar enriquecimento em cada linha
+    enriched_data = df.rdd.map(lambda row: enrich_row(row.asDict()))
+
+    # Criar um novo DataFrame com os dados enriquecidos
+    enriched_df = spark.createDataFrame(enriched_data, schema=['id', 'name', 'value', 'enriched_value'])
+
+    connection.close()
     return enriched_df
 
-enriched_stream = data_stream.transform(enrich_data)
+# Aplicar enriquecimento
+enriched_stream = enrich_data(data_stream)
 
-# Salvando os dados em um arquivo local
+# Escrever os dados enriquecidos em formato Parquet
 query = enriched_stream.writeStream \
     .outputMode("append") \
     .format("parquet") \
@@ -37,4 +70,5 @@ query = enriched_stream.writeStream \
     .option("checkpointLocation", "/path/to/checkpoints/") \
     .start()
 
+# Manter o stream rodando
 query.awaitTermination()

@@ -1,0 +1,481 @@
+[
+    {
+        "label": "chardet",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "chardet",
+        "description": "chardet",
+        "detail": "chardet",
+        "documentation": {}
+    },
+    {
+        "label": "cchardet",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cchardet",
+        "description": "cchardet",
+        "detail": "cchardet",
+        "documentation": {}
+    },
+    {
+        "label": "SparkSession",
+        "importPath": "pyspark.sql",
+        "description": "pyspark.sql",
+        "isExtraImport": true,
+        "detail": "pyspark.sql",
+        "documentation": {}
+    },
+    {
+        "label": "SparkSession",
+        "importPath": "pyspark.sql",
+        "description": "pyspark.sql",
+        "isExtraImport": true,
+        "detail": "pyspark.sql",
+        "documentation": {}
+    },
+    {
+        "label": "SparkSession",
+        "importPath": "pyspark.sql",
+        "description": "pyspark.sql",
+        "isExtraImport": true,
+        "detail": "pyspark.sql",
+        "documentation": {}
+    },
+    {
+        "label": "from_json",
+        "importPath": "pyspark.sql.functions",
+        "description": "pyspark.sql.functions",
+        "isExtraImport": true,
+        "detail": "pyspark.sql.functions",
+        "documentation": {}
+    },
+    {
+        "label": "col",
+        "importPath": "pyspark.sql.functions",
+        "description": "pyspark.sql.functions",
+        "isExtraImport": true,
+        "detail": "pyspark.sql.functions",
+        "documentation": {}
+    },
+    {
+        "label": "split",
+        "importPath": "pyspark.sql.functions",
+        "description": "pyspark.sql.functions",
+        "isExtraImport": true,
+        "detail": "pyspark.sql.functions",
+        "documentation": {}
+    },
+    {
+        "label": "StructType",
+        "importPath": "pyspark.sql.types",
+        "description": "pyspark.sql.types",
+        "isExtraImport": true,
+        "detail": "pyspark.sql.types",
+        "documentation": {}
+    },
+    {
+        "label": "StringType",
+        "importPath": "pyspark.sql.types",
+        "description": "pyspark.sql.types",
+        "isExtraImport": true,
+        "detail": "pyspark.sql.types",
+        "documentation": {}
+    },
+    {
+        "label": "mysql.connector",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "KafkaProducer",
+        "importPath": "kafka",
+        "description": "kafka",
+        "isExtraImport": true,
+        "detail": "kafka",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "DAG",
+        "importPath": "airflow",
+        "description": "airflow",
+        "isExtraImport": true,
+        "detail": "airflow",
+        "documentation": {}
+    },
+    {
+        "label": "SparkSubmitOperator",
+        "importPath": "airflow.providers.apache.spark.operators.spark_submit",
+        "description": "airflow.providers.apache.spark.operators.spark_submit",
+        "isExtraImport": true,
+        "detail": "airflow.providers.apache.spark.operators.spark_submit",
+        "documentation": {}
+    },
+    {
+        "label": "PythonOperator",
+        "importPath": "airflow.operators.python_operator",
+        "description": "airflow.operators.python_operator",
+        "isExtraImport": true,
+        "detail": "airflow.operators.python_operator",
+        "documentation": {}
+    },
+    {
+        "label": "DatahubEmitterOperator",
+        "importPath": "airflow_provider_datahub.operators.datahub",
+        "description": "airflow_provider_datahub.operators.datahub",
+        "isExtraImport": true,
+        "detail": "airflow_provider_datahub.operators.datahub",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "great_expectations",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "great_expectations",
+        "description": "great_expectations",
+        "detail": "great_expectations",
+        "documentation": {}
+    },
+    {
+        "label": "SparkDFDataset",
+        "importPath": "great_expectations.dataset",
+        "description": "great_expectations.dataset",
+        "isExtraImport": true,
+        "detail": "great_expectations.dataset",
+        "documentation": {}
+    },
+    {
+        "label": "detect_encoding",
+        "kind": 2,
+        "importPath": "Dados.Bancos.read_bancos",
+        "description": "Dados.Bancos.read_bancos",
+        "peekOfCode": "def detect_encoding(file_path):\n    with open(file_path, 'rb') as file:\n        result = chardet.detect(file.read())\n    return result['encoding']\nencoding = detect_encoding(path)\nprint(f\"The correct encoding for the file is: {encoding}\")\nimport cchardet\ndef detect_encoding_cchardet(file_path):\n    with open(file_path, 'rb') as file:\n        result = cchardet.detect(file.read())",
+        "detail": "Dados.Bancos.read_bancos",
+        "documentation": {}
+    },
+    {
+        "label": "detect_encoding_cchardet",
+        "kind": 2,
+        "importPath": "Dados.Bancos.read_bancos",
+        "description": "Dados.Bancos.read_bancos",
+        "peekOfCode": "def detect_encoding_cchardet(file_path):\n    with open(file_path, 'rb') as file:\n        result = cchardet.detect(file.read())\n    return result\nresult = detect_encoding_cchardet(path)\nprint(f\"The most likely encoding is: {result['encoding']} with confidence {result['confidence']*100}%\")",
+        "detail": "Dados.Bancos.read_bancos",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "kind": 5,
+        "importPath": "Dados.Bancos.read_bancos",
+        "description": "Dados.Bancos.read_bancos",
+        "peekOfCode": "path = r\"C:\\Users\\leandro.ferreira\\OneDrive\\Documentos\\USP\\MBA\\Aulas\\Dados\\Dados\\Bancos\\EnquadramentoInicia_v2.tsv\"\n# with open(path, encoding=\"cp1252\") as f:\n#     data = f.read()\n#     for line in data.splitlines():\n#         print(line.split(\"\\t\"))\nimport chardet\ndef detect_encoding(file_path):\n    with open(file_path, 'rb') as file:\n        result = chardet.detect(file.read())\n    return result['encoding']",
+        "detail": "Dados.Bancos.read_bancos",
+        "documentation": {}
+    },
+    {
+        "label": "encoding",
+        "kind": 5,
+        "importPath": "Dados.Bancos.read_bancos",
+        "description": "Dados.Bancos.read_bancos",
+        "peekOfCode": "encoding = detect_encoding(path)\nprint(f\"The correct encoding for the file is: {encoding}\")\nimport cchardet\ndef detect_encoding_cchardet(file_path):\n    with open(file_path, 'rb') as file:\n        result = cchardet.detect(file.read())\n    return result\nresult = detect_encoding_cchardet(path)\nprint(f\"The most likely encoding is: {result['encoding']} with confidence {result['confidence']*100}%\")",
+        "detail": "Dados.Bancos.read_bancos",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "Dados.Bancos.read_bancos",
+        "description": "Dados.Bancos.read_bancos",
+        "peekOfCode": "result = detect_encoding_cchardet(path)\nprint(f\"The most likely encoding is: {result['encoding']} with confidence {result['confidence']*100}%\")",
+        "detail": "Dados.Bancos.read_bancos",
+        "documentation": {}
+    },
+    {
+        "label": "enrich_data",
+        "kind": 2,
+        "importPath": "Trabalho 8.consumer",
+        "description": "Trabalho 8.consumer",
+        "peekOfCode": "def enrich_data(df):\n    # Conectar ao MySQL\n    connection = mysql.connector.connect(\n        host='localhost',\n        database='mydb',\n        user='myuser',\n        password='mypassword'\n    )\n    cursor = connection.cursor(dictionary=True)\n    # Suponha que a tabela de enriquecimento tem um mapeamento de id -> enriched_value",
+        "detail": "Trabalho 8.consumer",
+        "documentation": {}
+    },
+    {
+        "label": "spark",
+        "kind": 5,
+        "importPath": "Trabalho 8.consumer",
+        "description": "Trabalho 8.consumer",
+        "peekOfCode": "spark = SparkSession.builder \\\n    .appName(\"Kafka-PySpark-CSV-To-MySQL\") \\\n    .getOrCreate()\n# Esquema genérico para os dados CSV lidos do Kafka\nschema = StructType().add(\"id\", StringType()).add(\"name\", StringType()).add(\"value\", StringType())\n# Ler os dados do Kafka\nkafka_stream = spark \\\n    .readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", \"localhost:9092\") \\",
+        "detail": "Trabalho 8.consumer",
+        "documentation": {}
+    },
+    {
+        "label": "schema",
+        "kind": 5,
+        "importPath": "Trabalho 8.consumer",
+        "description": "Trabalho 8.consumer",
+        "peekOfCode": "schema = StructType().add(\"id\", StringType()).add(\"name\", StringType()).add(\"value\", StringType())\n# Ler os dados do Kafka\nkafka_stream = spark \\\n    .readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", \"localhost:9092\") \\\n    .option(\"subscribe\", \"csv_data_topic\") \\\n    .load()\n# Transformar a string CSV de volta em colunas\ndata_stream = kafka_stream.selectExpr(\"CAST(value AS STRING)\") \\",
+        "detail": "Trabalho 8.consumer",
+        "documentation": {}
+    },
+    {
+        "label": "kafka_stream",
+        "kind": 5,
+        "importPath": "Trabalho 8.consumer",
+        "description": "Trabalho 8.consumer",
+        "peekOfCode": "kafka_stream = spark \\\n    .readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", \"localhost:9092\") \\\n    .option(\"subscribe\", \"csv_data_topic\") \\\n    .load()\n# Transformar a string CSV de volta em colunas\ndata_stream = kafka_stream.selectExpr(\"CAST(value AS STRING)\") \\\n    .withColumn(\"data\", split(col(\"value\"), \",\")) \\\n    .select(",
+        "detail": "Trabalho 8.consumer",
+        "documentation": {}
+    },
+    {
+        "label": "data_stream",
+        "kind": 5,
+        "importPath": "Trabalho 8.consumer",
+        "description": "Trabalho 8.consumer",
+        "peekOfCode": "data_stream = kafka_stream.selectExpr(\"CAST(value AS STRING)\") \\\n    .withColumn(\"data\", split(col(\"value\"), \",\")) \\\n    .select(\n        col(\"data\")[0].alias(\"id\"),\n        col(\"data\")[1].alias(\"name\"),\n        col(\"data\")[2].alias(\"value\")\n    )\n# Função para enriquecer os dados consultando o MySQL\ndef enrich_data(df):\n    # Conectar ao MySQL",
+        "detail": "Trabalho 8.consumer",
+        "documentation": {}
+    },
+    {
+        "label": "enriched_stream",
+        "kind": 5,
+        "importPath": "Trabalho 8.consumer",
+        "description": "Trabalho 8.consumer",
+        "peekOfCode": "enriched_stream = enrich_data(data_stream)\n# Escrever os dados enriquecidos em formato Parquet\nquery = enriched_stream.writeStream \\\n    .outputMode(\"append\") \\\n    .format(\"parquet\") \\\n    .option(\"path\", \"/path/to/save/enriched_data/\") \\\n    .option(\"checkpointLocation\", \"/path/to/checkpoints/\") \\\n    .start()\n# Manter o stream rodando\nquery.awaitTermination()",
+        "detail": "Trabalho 8.consumer",
+        "documentation": {}
+    },
+    {
+        "label": "query",
+        "kind": 5,
+        "importPath": "Trabalho 8.consumer",
+        "description": "Trabalho 8.consumer",
+        "peekOfCode": "query = enriched_stream.writeStream \\\n    .outputMode(\"append\") \\\n    .format(\"parquet\") \\\n    .option(\"path\", \"/path/to/save/enriched_data/\") \\\n    .option(\"checkpointLocation\", \"/path/to/checkpoints/\") \\\n    .start()\n# Manter o stream rodando\nquery.awaitTermination()",
+        "detail": "Trabalho 8.consumer",
+        "documentation": {}
+    },
+    {
+        "label": "send_to_kafka",
+        "kind": 2,
+        "importPath": "Trabalho 8.producer",
+        "description": "Trabalho 8.producer",
+        "peekOfCode": "def send_to_kafka(producer, topic, data):\n    producer.send(topic, value=data.encode('utf-8'))\nif __name__ == \"__main__\":\n    producer = KafkaProducer(bootstrap_servers='localhost:9092')\n    topic = 'csv_data_topic'\n    csv_dir = '/path/to/csv/files/'\n    for file_name in os.listdir(csv_dir):\n        if file_name.endswith(\".csv\"):\n            file_path = os.path.join(csv_dir, file_name)\n            with open(file_path, mode='r') as file:",
+        "detail": "Trabalho 8.producer",
+        "documentation": {}
+    },
+    {
+        "label": "read_files",
+        "kind": 2,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "def read_files(spark, source_path, delimiter= None, format=\"csv\"):\n  print(f\"Leia os arquivos file/folder: {source_path} usando delimitador {delimiter}\")\n  df = spark.read.format(format).options(delimiter=delimiter, header=True, inferSchema=True, ).load(source_path)\n  print(\"Total rows:\",df.count())\n  return df\ndef write_parquet_files(spark,df,destination_folder):\n  df.write.mode('overwrite').parquet(destination_folder)\ndef decode_names(spark, df, folder_path):\n  from pyspark.sql import SparkSession\n  from pyspark.sql.functions import udf, col, lit, broadcast",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "write_parquet_files",
+        "kind": 2,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "def write_parquet_files(spark,df,destination_folder):\n  df.write.mode('overwrite').parquet(destination_folder)\ndef decode_names(spark, df, folder_path):\n  from pyspark.sql import SparkSession\n  from pyspark.sql.functions import udf, col, lit, broadcast\n  from pyspark.sql.types import StringType\n  correct_dic = {\n      \"CR�DITO\": \"CRÉDITO\",\n      \"MUNIC�PIO\": \"MUNICÍPIO\",\n      \"UB�\": \"UBÁ\",",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "decode_names",
+        "kind": 2,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "def decode_names(spark, df, folder_path):\n  from pyspark.sql import SparkSession\n  from pyspark.sql.functions import udf, col, lit, broadcast\n  from pyspark.sql.types import StringType\n  correct_dic = {\n      \"CR�DITO\": \"CRÉDITO\",\n      \"MUNIC�PIO\": \"MUNICÍPIO\",\n      \"UB�\": \"UBÁ\",\n      \"S�O\": \"SÃO\",\n      \"M�TUO\": \"MÚTUO\",",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "transformation_trusted",
+        "kind": 2,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "def transformation_trusted(spark, folder_name, folder_path, df):\n  from pyspark.sql.functions import regexp_replace, col, row_number, when, isnull\n  from pyspark.sql.window import Window\n  print(folder_name)\n  print(\"Quantidade total de linhas antes da limpeza dos dados:\",df.count())\n  if folder_name == \"Bancos\":\n    # A solução segue o mesmo principio do windows function row_number() no SQL\n    #Particiona a base por CNPJ e ordena pelo nome, e pega apenas o primeiro registro\n    window = Window.partitionBy(\"CNPJ\").orderBy(row_number().over(Window.partitionBy(\"CNPJ\").orderBy(\"Nome\")))\n    df = df.withColumn(\"row_num\", row_number().over(window))",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "transformation_delivery",
+        "kind": 2,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "def transformation_delivery(df_bancos,df_empregados, df_reclamacoes):\n  df_empregados_renamed = df_empregados.withColumnRenamed(\"CNPJ_Segmento\", \"CNPJ\")\n  df_empregados_renamed = df_empregados_renamed.drop(\"Nome\")\n  # df_reclamacoes_renamed = df_reclamacoes.withColumnRenamed(\"CNPJ IF\", \"CNPJ\")\n  df_join = df_bancos.join(df_empregados_renamed, \"CNPJ\", \"inner\").join(df_reclamacoes, \"CNPJ\", \"inner\")\n  print(\"Junção das tabelas:\")\n  df_join.show(truncate=False)\n  print(\"Total de linhas: \",df_join.count())\n  return df_join\ndef load_dataframe_to_postgres(df, table_name, schema_name):",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "load_dataframe_to_postgres",
+        "kind": 2,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "def load_dataframe_to_postgres(df, table_name, schema_name):\n  # PostgreSQL connection details\n  host = \"localhost\"\n  database = \"trabalho_3\"\n  user = \"postgres\"\n  password = \"growdev\"\n  # Construct JDBC URL with schema\n  jdbc_url = f\"jdbc:postgresql://{host}/{database}?currentSchema={schema_name}\"\n  # Write DataFrame to PostgreSQL\n  df.write.format(\"jdbc\") \\",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "spark",
+        "kind": 5,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "spark = SparkSession.builder \\\n    .appName(\"Exercício 3\") \\\n    .getOrCreate()\nlist_folders = [\n  {\"folder_name\":\"Bancos\", \"delimiter\": \"\\t\"},\n  {\"folder_name\":\"Reclamações\", \"delimiter\": \";\"},\n  {\"folder_name\":\"Empregados\", \"delimiter\": \"|\"},\n]\nroot = '/content/sample_data'\nfor folder in list_folders:",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "list_folders",
+        "kind": 5,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "list_folders = [\n  {\"folder_name\":\"Bancos\", \"delimiter\": \"\\t\"},\n  {\"folder_name\":\"Reclamações\", \"delimiter\": \";\"},\n  {\"folder_name\":\"Empregados\", \"delimiter\": \"|\"},\n]\nroot = '/content/sample_data'\nfor folder in list_folders:\n    print(\"\\nProcessing folder folder...\")\n    folder_name = folder[\"folder_name\"]\n    delimiter = folder[\"delimiter\"]",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "root",
+        "kind": 5,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "root = '/content/sample_data'\nfor folder in list_folders:\n    print(\"\\nProcessing folder folder...\")\n    folder_name = folder[\"folder_name\"]\n    delimiter = folder[\"delimiter\"]\n    table_name = folder[\"folder_name\"].lower()\n    folder_path = os.path.join(root,folder_name)\n    file_list = os.listdir(folder_path)\n    #Verifica qual é o tipo do arquivo, e só aceita se for csv ou tsv\n    #Defini o schema com base no primeiro arquivo",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "df_bancos",
+        "kind": 5,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "df_bancos = read_files(spark,os.path.join(root, \"trusted\", \"bancos\"),delimiter, \"parquet\")\ndf_empregados = read_files(spark,os.path.join(root, \"trusted\", \"empregados\"),delimiter, \"parquet\")\ndf_reclamacoes = read_files(spark,os.path.join(root, \"trusted\", \"reclamações\"),delimiter, \"parquet\")\ndf_delivery = transformation_delivery(df_bancos,df_empregados, df_reclamacoes)\n# Escrever na camada delivery\ndelivered_folder = os.path.join(root, \"delivery\")\nprint(\"\\n Escrevendo em arquivo parquet...\")\nwrite_parquet_files(spark, df_delivery, delivered_folder)\n# load_dataframe_to_postgres(df_delivery, table_name, \"delivery\")",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "df_empregados",
+        "kind": 5,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "df_empregados = read_files(spark,os.path.join(root, \"trusted\", \"empregados\"),delimiter, \"parquet\")\ndf_reclamacoes = read_files(spark,os.path.join(root, \"trusted\", \"reclamações\"),delimiter, \"parquet\")\ndf_delivery = transformation_delivery(df_bancos,df_empregados, df_reclamacoes)\n# Escrever na camada delivery\ndelivered_folder = os.path.join(root, \"delivery\")\nprint(\"\\n Escrevendo em arquivo parquet...\")\nwrite_parquet_files(spark, df_delivery, delivered_folder)\n# load_dataframe_to_postgres(df_delivery, table_name, \"delivery\")",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "df_reclamacoes",
+        "kind": 5,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "df_reclamacoes = read_files(spark,os.path.join(root, \"trusted\", \"reclamações\"),delimiter, \"parquet\")\ndf_delivery = transformation_delivery(df_bancos,df_empregados, df_reclamacoes)\n# Escrever na camada delivery\ndelivered_folder = os.path.join(root, \"delivery\")\nprint(\"\\n Escrevendo em arquivo parquet...\")\nwrite_parquet_files(spark, df_delivery, delivered_folder)\n# load_dataframe_to_postgres(df_delivery, table_name, \"delivery\")",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "df_delivery",
+        "kind": 5,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "df_delivery = transformation_delivery(df_bancos,df_empregados, df_reclamacoes)\n# Escrever na camada delivery\ndelivered_folder = os.path.join(root, \"delivery\")\nprint(\"\\n Escrevendo em arquivo parquet...\")\nwrite_parquet_files(spark, df_delivery, delivered_folder)\n# load_dataframe_to_postgres(df_delivery, table_name, \"delivery\")",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "delivered_folder",
+        "kind": 5,
+        "importPath": "Trabalho5.exercício_3",
+        "description": "Trabalho5.exercício_3",
+        "peekOfCode": "delivered_folder = os.path.join(root, \"delivery\")\nprint(\"\\n Escrevendo em arquivo parquet...\")\nwrite_parquet_files(spark, df_delivery, delivered_folder)\n# load_dataframe_to_postgres(df_delivery, table_name, \"delivery\")",
+        "detail": "Trabalho5.exercício_3",
+        "documentation": {}
+    },
+    {
+        "label": "validate_data",
+        "kind": 2,
+        "importPath": "Trabalho5.ingestion",
+        "description": "Trabalho5.ingestion",
+        "peekOfCode": "def validate_data():\n    # Inicializar sessão Spark\n    spark = SparkSession.builder.appName('GreatExpectationsValidation').getOrCreate()\n    # Ler dados\n    df = spark.read.csv('Dados', header=True)\n    # Aplicar Great Expectations\n    ge_df = SparkDFDataset(df)\n    # Definir expectativas de dados\n    ge_df.expect_column_to_exist(\"coluna_esperada\")\n    ge_df.expect_column_values_to_not_be_null(\"coluna_esperada\")",
+        "detail": "Trabalho5.ingestion",
+        "documentation": {}
+    },
+    {
+        "label": "default_args",
+        "kind": 5,
+        "importPath": "Trabalho5.ingestion",
+        "description": "Trabalho5.ingestion",
+        "peekOfCode": "default_args = {\n    'owner': 'airflow',\n    'depends_on_past': False,\n    'start_date': datetime(2024, 9, 1),\n    'email_on_failure': False,\n    'email_on_retry': False,\n    'retries': 1,\n    'retry_delay': timedelta(minutes=5),\n}\n# Definir o DAG",
+        "detail": "Trabalho5.ingestion",
+        "documentation": {}
+    },
+    {
+        "label": "dag",
+        "kind": 5,
+        "importPath": "Trabalho5.ingestion",
+        "description": "Trabalho5.ingestion",
+        "peekOfCode": "dag = DAG(\n    'pyspark_job_with_data_quality_and_datahub',\n    default_args=default_args,\n    description='PySpark job with Data Quality checks using Great Expectations and DataHub integration',\n    schedule_interval=timedelta(days=1),\n)\n# Função de validação de dados usando Great Expectations\ndef validate_data():\n    # Inicializar sessão Spark\n    spark = SparkSession.builder.appName('GreatExpectationsValidation').getOrCreate()",
+        "detail": "Trabalho5.ingestion",
+        "documentation": {}
+    },
+    {
+        "label": "spark_job",
+        "kind": 5,
+        "importPath": "Trabalho5.ingestion",
+        "description": "Trabalho5.ingestion",
+        "peekOfCode": "spark_job = SparkSubmitOperator(\n    task_id='spark_submit_local_job',\n    application='Trabalho5/exercício_3.py',  # Atualize com o caminho do script PySpark\n    conn_id=None,  # Modo local\n    total_executor_cores=2,\n    executor_memory='2g',\n    driver_memory='1g',\n    num_executors=2,\n    dag=dag,\n)",
+        "detail": "Trabalho5.ingestion",
+        "documentation": {}
+    },
+    {
+        "label": "data_quality_task",
+        "kind": 5,
+        "importPath": "Trabalho5.ingestion",
+        "description": "Trabalho5.ingestion",
+        "peekOfCode": "data_quality_task = PythonOperator(\n    task_id='validate_data_quality',\n    python_callable=validate_data,\n    dag=dag,\n)\n# Tarefa de emissão para o DataHub\ndatahub_emit_task = DatahubEmitterOperator(\n    task_id='emit_metadata_to_datahub',\n    datahub_rest_conn_id='datahub_rest_default',  # ID da conexão configurada no Airflow\n    entity_urn=\"urn:li:dataset:(urn:li:dataPlatform:spark,exemplo_dataset,PROD)\",  # Modifique com seu dataset real",
+        "detail": "Trabalho5.ingestion",
+        "documentation": {}
+    },
+    {
+        "label": "datahub_emit_task",
+        "kind": 5,
+        "importPath": "Trabalho5.ingestion",
+        "description": "Trabalho5.ingestion",
+        "peekOfCode": "datahub_emit_task = DatahubEmitterOperator(\n    task_id='emit_metadata_to_datahub',\n    datahub_rest_conn_id='datahub_rest_default',  # ID da conexão configurada no Airflow\n    entity_urn=\"urn:li:dataset:(urn:li:dataPlatform:spark,exemplo_dataset,PROD)\",  # Modifique com seu dataset real\n    payload={},\n    dag=dag,\n)\n# Definir a ordem das tarefas\nspark_job >> data_quality_task >> datahub_emit_task",
+        "detail": "Trabalho5.ingestion",
+        "documentation": {}
+    }
+]
