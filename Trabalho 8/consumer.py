@@ -1,11 +1,11 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import from_json, col, split
+from pyspark.sql.functions import col, split
 from pyspark.sql.types import StructType, StringType
 import mysql.connector
 
 # Criar a sessão Spark
 spark = SparkSession.builder \
-    .appName("Kafka-PySpark-CSV-To-MySQL") \
+    .appName("Pipeline-Streaming") \
     .getOrCreate()
 
 # Esquema genérico para os dados CSV lidos do Kafka
@@ -66,8 +66,8 @@ enriched_stream = enrich_data(data_stream)
 query = enriched_stream.writeStream \
     .outputMode("append") \
     .format("parquet") \
-    .option("path", "/path/to/save/enriched_data/") \
-    .option("checkpointLocation", "/path/to/checkpoints/") \
+    .option("path", "Dados/enriched_data") \
+    .option("checkpointLocation", "Dados/checkpoints") \
     .start()
 
 # Manter o stream rodando

@@ -8,7 +8,7 @@ def send_to_kafka(producer, topic, data):
 if __name__ == "__main__":
     producer = KafkaProducer(bootstrap_servers='localhost:9092')
     topic = 'csv_data_topic'
-    csv_dir = '/path/to/csv/files/'
+    csv_dir = 'Dados/Reclamações'
 
     for file_name in os.listdir(csv_dir):
         if file_name.endswith(".csv"):
