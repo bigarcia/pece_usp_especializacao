@@ -19,7 +19,7 @@
 - `-e MYSQL_ROOT_PASSWORD=minhasenha`: Define a senha do usuário root.
 - `-p 3306:3306`: Mapeia a porta do MySQL (3306) no container para a porta 3306 no host.
 
-10.Acessar o MySQL do container:
+9. Acessar o MySQL do container:
 `docker exec -it mysql-db mysql -u root -p`
 11. Criar Banco de Dados e tabelas:
 
@@ -30,5 +30,14 @@ CREATE TABLE reclamacoes (
     id INT PRIMARY KEY AUTO_INCREMENT,
     informacao VARCHAR(255)
 );`
+
+12. Executar o producer:
+`python producer.py`
+
+13. Executar o consumer:
+`spark-submit consumer.py`
+
+14. Os dados processados e enriquecidos estarão no diretório `./output`.
+
 
 
