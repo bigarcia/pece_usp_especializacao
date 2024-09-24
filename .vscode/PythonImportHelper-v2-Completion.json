@@ -42,14 +42,6 @@
         "documentation": {}
     },
     {
-        "label": "from_json",
-        "importPath": "pyspark.sql.functions",
-        "description": "pyspark.sql.functions",
-        "isExtraImport": true,
-        "detail": "pyspark.sql.functions",
-        "documentation": {}
-    },
-    {
         "label": "col",
         "importPath": "pyspark.sql.functions",
         "description": "pyspark.sql.functions",
@@ -240,7 +232,7 @@
         "kind": 5,
         "importPath": "Trabalho 8.consumer",
         "description": "Trabalho 8.consumer",
-        "peekOfCode": "spark = SparkSession.builder \\\n    .appName(\"Kafka-PySpark-CSV-To-MySQL\") \\\n    .getOrCreate()\n# Esquema genérico para os dados CSV lidos do Kafka\nschema = StructType().add(\"id\", StringType()).add(\"name\", StringType()).add(\"value\", StringType())\n# Ler os dados do Kafka\nkafka_stream = spark \\\n    .readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", \"localhost:9092\") \\",
+        "peekOfCode": "spark = SparkSession.builder \\\n    .appName(\"Pipeline-Streaming\") \\\n    .getOrCreate()\n# Esquema genérico para os dados CSV lidos do Kafka\nschema = StructType().add(\"id\", StringType()).add(\"name\", StringType()).add(\"value\", StringType())\n# Ler os dados do Kafka\nkafka_stream = spark \\\n    .readStream \\\n    .format(\"kafka\") \\\n    .option(\"kafka.bootstrap.servers\", \"localhost:9092\") \\",
         "detail": "Trabalho 8.consumer",
         "documentation": {}
     },
@@ -276,7 +268,7 @@
         "kind": 5,
         "importPath": "Trabalho 8.consumer",
         "description": "Trabalho 8.consumer",
-        "peekOfCode": "enriched_stream = enrich_data(data_stream)\n# Escrever os dados enriquecidos em formato Parquet\nquery = enriched_stream.writeStream \\\n    .outputMode(\"append\") \\\n    .format(\"parquet\") \\\n    .option(\"path\", \"/path/to/save/enriched_data/\") \\\n    .option(\"checkpointLocation\", \"/path/to/checkpoints/\") \\\n    .start()\n# Manter o stream rodando\nquery.awaitTermination()",
+        "peekOfCode": "enriched_stream = enrich_data(data_stream)\n# Escrever os dados enriquecidos em formato Parquet\nquery = enriched_stream.writeStream \\\n    .outputMode(\"append\") \\\n    .format(\"parquet\") \\\n    .option(\"path\", \"Dados/enriched_data\") \\\n    .option(\"checkpointLocation\", \"Dados/checkpoints\") \\\n    .start()\n# Manter o stream rodando\nquery.awaitTermination()",
         "detail": "Trabalho 8.consumer",
         "documentation": {}
     },
@@ -285,7 +277,7 @@
         "kind": 5,
         "importPath": "Trabalho 8.consumer",
         "description": "Trabalho 8.consumer",
-        "peekOfCode": "query = enriched_stream.writeStream \\\n    .outputMode(\"append\") \\\n    .format(\"parquet\") \\\n    .option(\"path\", \"/path/to/save/enriched_data/\") \\\n    .option(\"checkpointLocation\", \"/path/to/checkpoints/\") \\\n    .start()\n# Manter o stream rodando\nquery.awaitTermination()",
+        "peekOfCode": "query = enriched_stream.writeStream \\\n    .outputMode(\"append\") \\\n    .format(\"parquet\") \\\n    .option(\"path\", \"Dados/enriched_data\") \\\n    .option(\"checkpointLocation\", \"Dados/checkpoints\") \\\n    .start()\n# Manter o stream rodando\nquery.awaitTermination()",
         "detail": "Trabalho 8.consumer",
         "documentation": {}
     },
@@ -294,7 +286,7 @@
         "kind": 2,
         "importPath": "Trabalho 8.producer",
         "description": "Trabalho 8.producer",
-        "peekOfCode": "def send_to_kafka(producer, topic, data):\n    producer.send(topic, value=data.encode('utf-8'))\nif __name__ == \"__main__\":\n    producer = KafkaProducer(bootstrap_servers='localhost:9092')\n    topic = 'csv_data_topic'\n    csv_dir = '/path/to/csv/files/'\n    for file_name in os.listdir(csv_dir):\n        if file_name.endswith(\".csv\"):\n            file_path = os.path.join(csv_dir, file_name)\n            with open(file_path, mode='r') as file:",
+        "peekOfCode": "def send_to_kafka(producer, topic, data):\n    producer.send(topic, value=data.encode('utf-8'))\nif __name__ == \"__main__\":\n    producer = KafkaProducer(bootstrap_servers='localhost:9092')\n    topic = 'csv_data_topic'\n    csv_dir = 'Dados/Reclamações'\n    for file_name in os.listdir(csv_dir):\n        if file_name.endswith(\".csv\"):\n            file_path = os.path.join(csv_dir, file_name)\n            with open(file_path, mode='r') as file:",
         "detail": "Trabalho 8.producer",
         "documentation": {}
     },
