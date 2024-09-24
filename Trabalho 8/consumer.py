@@ -1,55 +1,40 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import *
-import pymysql
+from pyspark.sql.functions import from_json, col
+from pyspark.sql.types import StructType, StringType
 
-# Criar sessão Spark
+# Defina o esquema dos dados
+schema = StructType().add("id", StringType()).add("data", StringType())
+
 spark = SparkSession.builder \
-    .appName("KafkaReclamacoes") \
+    .appName("Kafka-PySpark-Structured-Streaming") \
     .getOrCreate()
 
-# Ler os dados do Kafka
-kafka_df = spark.readStream \
+# Ler dados do Kafka
+kafka_stream = spark \
+    .readStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "localhost:9092") \
-    .option("subscribe", "reclamacoes") \
+    .option("subscribe", "data_topic") \
     .load()
 
-# Definir esquema dos dados
-schema = "id INT, descricao STRING, data STRING"
-
-# Transformar e selecionar dados do Kafka
-value_df = kafka_df.selectExpr("CAST(value AS STRING) as json_str") \
-    .select(from_json(col("json_str"), schema).alias("data")) \
+# Convertendo os dados para o esquema desejado
+data_stream = kafka_stream.selectExpr("CAST(value AS STRING)") \
+    .select(from_json(col("value"), schema).alias("data")) \
     .select("data.*")
 
-# Conectar ao banco de dados SQL para enriquecer os dados
+# Conectar ao banco de dados SQL para enriquecimento
 def enrich_data(df):
-    conn = pymysql.connect(host='localhost', user='usuario', password='senha', db='banco')
-    cursor = conn.cursor()
-
-    def enrich_row(row):
-        cursor.execute(f"SELECT * FROM banco_dados WHERE id = {row['id']}")
-        result = cursor.fetchone()
-        enriched_data = (row['id'], row['descricao'], result[1])
-        return enriched_data
-
-    enriched_rdd = df.rdd.map(enrich_row)
-    enriched_df = enriched_rdd.toDF(schema="id INT, descricao STRING, dados_banco STRING")
-
-    cursor.close()
-    conn.close()
-
+    enriched_df = df.withColumn("enriched_field", df["data"] + "_enriched")
     return enriched_df
 
-# Enriquecer os dados
-enriched_df = enrich_data(value_df)
+enriched_stream = data_stream.transform(enrich_data)
 
-# Salvar os dados enriquecidos em arquivos locais
-query = enriched_df.writeStream \
+# Salvando os dados em um arquivo local
+query = enriched_stream.writeStream \
     .outputMode("append") \
-    .format("csv") \
-    .option("path", "./output") \
-    .option("checkpointLocation", "./checkpoint") \
+    .format("parquet") \
+    .option("path", "/path/to/save/enriched_data/") \
+    .option("checkpointLocation", "/path/to/checkpoints/") \
     .start()
 
 query.awaitTermination()

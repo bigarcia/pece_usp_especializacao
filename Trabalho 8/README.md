@@ -1,7 +1,7 @@
 
 # Trabalho 8 - Pipeline Streaming com PySpark e Kafka
 
-
+### Passo a Passo:
 1. Criação do arquivo docker-compose.yml
 2. Execução do comando abaixo para iniciar o Kafka e Zookeeper localmente.
 `docker-compose up -d`

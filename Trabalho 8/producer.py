@@ -2,21 +2,22 @@ from kafka import KafkaProducer
 import json
 import os
 
-# Configurar Kafka Producer
-producer = KafkaProducer(
-    bootstrap_servers='localhost:9092',
-    value_serializer=lambda v: json.dumps(v).encode('utf-8')
-)
+def read_file(file_path):
+    with open(file_path, 'r') as file:
+        return file.read()
 
-# Diretório dos arquivos
-directory = 'Dados/Reclamações'
+def send_to_kafka(producer, topic, data):
+    producer.send(topic, value=data.encode('utf-8'))
 
-# Ler e enviar cada arquivo JSON
-for filename in os.listdir(directory):
-    if filename.endswith(".json"):
-        with open(os.path.join(directory, filename), 'r') as file:
-            data = json.load(file)
-            producer.send('reclamacoes', value=data)
-            print(f"Enviado: {filename}")
+if __name__ == "__main__":
+    producer = KafkaProducer(bootstrap_servers='localhost:9092')
+    topic = 'data_topic'
+    data_dir = '/path/to/data/files/'
 
-producer.flush()
+    for file_name in os.listdir(data_dir):
+        file_path = os.path.join(data_dir, file_name)
+        data = read_file(file_path)
+        send_to_kafka(producer, topic, data)
+
+    producer.flush()
+    producer.close()
